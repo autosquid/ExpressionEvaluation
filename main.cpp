@@ -2,6 +2,17 @@
 #include <utility>
 #include <algorithm>
 #include <iostream>
+#include <exception>
+using namespace std;
+
+class ExpressionException: public exception
+{
+  virtual const char* what() const throw()
+  {
+    return "Invalid Expression";
+  }
+} myex;
+
 /*
 exp -> exp + term | exp - term | term
 term -> term * factor | term / factor | factor
@@ -17,7 +28,8 @@ double simple_op(double a, double b, char op)
     if (op == '+') return a + b;
     if (op == '-') return a - b;
     if (op == '*') return a * b;
-    return double(a) / b;
+    if (op == '/') return a / b;
+    throw myex;
 }
 
 std::string slice(char* str, int s, int e)
