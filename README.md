@@ -3,18 +3,11 @@ ExpressionEvaluation
 
 (a+b)*c/d-e*f/g ...
 
+带括号10以内四则运算
 
+栈实现
 
-change log:
+Todo:
 ===========
 
-1. do it a compiler way
-
-
-todo:
-==========
-1. beyound 9
-
-2. minus
-
-3. a wiser way
+1. 做成语法树试下
